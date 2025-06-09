@@ -76,6 +76,18 @@ const Header = () => {
                 </ChakraLink>
                 <ChakraLink
                   as={RouterLink}
+                  to="/Skills"
+                  onClick={() => setIsOpen(false)}
+                  color="white"
+                  fontWeight="bold"
+                  textDecoration="none"
+                  pl={4}
+                  _hover={{ textDecoration: "none", color: "teal.300" }}
+                >
+                  Habilidades
+                </ChakraLink>
+                <ChakraLink
+                  as={RouterLink}
                   to="/projects"
                   onClick={() => setIsOpen(false)}
                   color="white"
@@ -116,6 +128,7 @@ const Header = () => {
           {[
             { label: "Inicio", path: "/" },
             { label: "Sobre mí", path: "/presentation" },
+            { label: "Habilidades", path: "/skills" },
             { label: "Proyectos", path: "/projects" },
             { label: "Contacto", path: "/contact" },
           ].map(({ label, path }) => (

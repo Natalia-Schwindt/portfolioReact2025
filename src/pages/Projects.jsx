@@ -1,12 +1,4 @@
-import {
-  Box,
-  Heading,
-  Image,
-  Text,
-  Link,
-  Stack,
-  Flex
-} from "@chakra-ui/react";
+import { Box, Heading, Image, Text, Link, Stack, Flex } from "@chakra-ui/react";
 
 const projects = [
   {
@@ -21,7 +13,7 @@ const projects = [
     id: 2,
     title: "Lista de Tareas",
     description:
-    "Aplicación desarrollada como proyecto final del Módulo V de ADA ITW. Permite crear y gestionar listas de tareas de forma dinámica, intuitiva y completamente responsiva. El usuario puede añadir tareas, editarlas, filtrarlas por estado (pendientes o realizadas), y eliminarlas según necesidad. El diseño se realizó con React y Chakra UI, asegurando una experiencia de uso fluida desde cualquier dispositivo. Es una herramienta práctica pensada para mejorar la organización personal o laboral. El proyecto utiliza Vite para un entorno de desarrollo rápido y eficiente.",
+      "Aplicación desarrollada como proyecto final del Módulo V de ADA ITW. Permite crear y gestionar listas de tareas de forma dinámica, intuitiva y completamente responsiva. El usuario puede añadir tareas, editarlas, filtrarlas por estado (pendientes o realizadas), y eliminarlas según necesidad. El diseño se realizó con React y Chakra UI, asegurando una experiencia de uso fluida desde cualquier dispositivo. Es una herramienta práctica pensada para mejorar la organización personal o laboral. El proyecto utiliza Vite para un entorno de desarrollo rápido y eficiente.",
     image: "/images/proyecto2.png",
     link: "https://github.com/Natalia-Schwindt/todolist",
   },
@@ -74,7 +66,7 @@ const Projects = () => {
       </Heading>
 
       {projects.map((project) => (
-        <Flex
+       <Flex
   key={project.id}
   direction={{ base: "column", lg: "row" }}
   align="center"
@@ -83,19 +75,32 @@ const Projects = () => {
   boxShadow="0 4px 20px rgba(0, 0, 0, 0.3)"
   overflow="hidden"
   mb={10}
+  mx="auto"
+  w="100%"
+  maxW={{
+    base: "100%",     // mobile
+    md: "80%",        // tablet
+    lg: "100%",       // laptop
+    xl: "1440px",     // escritorio grande
+  }}
   sx={{
     backdropFilter: "blur(10px)",
     WebkitBackdropFilter: "blur(10px)",
   }}
 >
-  <Box flexBasis={{ base: "100%", lg: "40%" }} w="100%" h="100%">
+  <Box
+    flexBasis={{ base: "100%", lg: "40%" }}
+    w="100%"
+    sx={{
+      aspectRatio: { base: "auto", md: "4/3" },
+    }}
+  >
     <Image
       src={project.image}
       alt={project.title}
       w="100%"
       h="100%"
-      objectFit="cover"
-      maxH="300px"
+      objectFit="contain"
     />
   </Box>
 
