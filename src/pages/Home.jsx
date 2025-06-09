@@ -6,7 +6,7 @@ const Home = () => {
       <Box textAlign="center">
         <Heading
           as="h1"
-          pt={200}
+          pt={250}
           fontSize={["3xl", "4xl", "5xl"]}
           color="white"
           lineHeight="short"

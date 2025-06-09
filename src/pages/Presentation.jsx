@@ -4,7 +4,7 @@ const Presentation = () => {
   return (
     <Box 
       as="section"
-      p="150px 6px 0"
+      p="200px 6px 0"
       color="white"
       textAlign="center"
     >

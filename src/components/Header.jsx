@@ -10,7 +10,9 @@ const Header = () => {
   return (
     <Box
       as="header"
-      position="relative"
+      position="fixed"
+      top="0"
+      width="100%"
       zIndex="1000"
       bg="transparent"
       p={4}
@@ -31,15 +33,16 @@ const Header = () => {
       {isOpen && (
         <Box
           position="absolute"
-          top="30px"
+          top="0"
           left="0"
           right="0"
           bg="transparent"
+          backdropFilter="blur(10px)"
           px={4}
           py={6}
           zIndex="999"
         >
-          <VStack align="start" spacing={4}>
+          <VStack align="start" spacing={1}>
             <ChakraLink
               as={RouterLink}
               to="/"

@@ -10,7 +10,7 @@ const Contact = () => {
   return (
     <Box
       as="section"
-      p="150px 8px 0"
+      p="200px 8px 0"
       textAlign="center"
       color="white"
       h="70vh"
