@@ -37,7 +37,7 @@ const projects = [
     id: 5,
     title: "Editor de Memes",
     description:
-      "Este proyecto sirve para crear memes personalizados, con texto editable y una variedad de filtros aplicables sobre la imagen.",
+      "Editor de memes desarrollado de forma individual con HTML, CSS y JavaScript Vanilla. La aplicación permite personalizar imágenes agregando texto superior e inferior, con múltiples opciones de edición: fuente, tamaño, alineación, color, contorno, espaciado e interlineado. Incluye además herramientas para modificar la apariencia de la imagen mediante filtros (brillo, contraste, opacidad, desenfoque, entre otros) y una opción para descargar el meme final en formato de imagen. El proyecto se enfocó en la práctica de manipulación del DOM, estilos dinámicos y usabilidad en la edición visual.",
     image: "/images/proyecto5.png",
     link: "https://github.com/Natalia-Schwindt/editordememes",
   },
@@ -45,7 +45,7 @@ const projects = [
     id: 6,
     title: "Proyecto QR",
     description:
-      "En este proyecto se genera un código QR asociado a una página web, permitiendo configurar accesos y opciones de uso específicas.",
+      "Proyecto de diseño web que simula la carta digital de un restaurante. Fue desarrollado con HTML y CSS puros. Las imágenes fueron creadas con inteligencia artificial (Leonardo AI), lo que permitió dar un estilo visual original y coherente. El sitio presenta secciones navegables de bebidas, comidas y postres, acompañadas de descripciones creativas que refuerzan la identidad del restaurante. La experiencia se completa con un código QR que permite acceder fácilmente a la carta desde dispositivos móviles, simulando su uso en un entorno real. Este proyecto fue uno de los más disfrutados, por su combinación de diseño, narrativa y creatividad visual.",
     image: "/images/proyecto6.png",
     link: "https://github.com/Natalia-Schwindt/proyectoqr",
   },
