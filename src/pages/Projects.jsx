@@ -1,4 +1,12 @@
-import { Box, Heading, Image, Text, Link, Stack } from "@chakra-ui/react";
+import {
+  Box,
+  Heading,
+  Image,
+  Text,
+  Link,
+  Stack,
+  Flex
+} from "@chakra-ui/react";
 
 const projects = [
   {
@@ -66,43 +74,55 @@ const Projects = () => {
       </Heading>
 
       {projects.map((project) => (
-        <Box
-          key={project.id}
-          bg="rgba(255, 255, 255, 0.1)"
-          borderRadius="2xl"
-          boxShadow="0 4px 20px rgba(0, 0, 0, 0.3)"
-          overflow="hidden"
-          mb={10}
-          sx={{
-            backdropFilter: "blur(10px)",
-            WebkitBackdropFilter: "blur(10px)",
-          }}
-        >
-          <Image
-            src={project.image}
-            alt={project.title}
-            width="100%"
-            objectFit="contain"
-          />
+        <Flex
+  key={project.id}
+  direction={{ base: "column", lg: "row" }}
+  align="center"
+  bg="rgba(255, 255, 255, 0.1)"
+  borderRadius="2xl"
+  boxShadow="0 4px 20px rgba(0, 0, 0, 0.3)"
+  overflow="hidden"
+  mb={10}
+  sx={{
+    backdropFilter: "blur(10px)",
+    WebkitBackdropFilter: "blur(10px)",
+  }}
+>
+  <Box flexBasis={{ base: "100%", lg: "40%" }} w="100%" h="100%">
+    <Image
+      src={project.image}
+      alt={project.title}
+      w="100%"
+      h="100%"
+      objectFit="cover"
+      maxH="300px"
+    />
+  </Box>
 
-          <Stack spacing={3} p={4} textAlign="center">
-            <Heading as="h3" fontSize="xl" color="white">
-              {project.title}
-            </Heading>
-            <Text fontSize="sm" color="whiteAlpha.800">
-              {project.description}
-            </Text>
-            <Link
-              href={project.link}
-              isExternal
-              color="blue.300"
-              fontWeight="medium"
-              _hover={{ color: "blue.500" }}
-            >
-              Ver más →
-            </Link>
-          </Stack>
-        </Box>
+  <Stack
+    flexBasis={{ base: "100%", lg: "60%" }}
+    spacing={4}
+    p={6}
+    textAlign={{ base: "center", lg: "left" }}
+    justify="center"
+  >
+    <Heading as="h3" fontSize="xl" color="white">
+      {project.title}
+    </Heading>
+    <Text fontSize="sm" color="whiteAlpha.800">
+      {project.description}
+    </Text>
+    <Link
+      href={project.link}
+      isExternal
+      color="blue.300"
+      fontWeight="medium"
+      _hover={{ color: "blue.500" }}
+    >
+      Ver más →
+    </Link>
+  </Stack>
+</Flex>
       ))}
     </Box>
   );
