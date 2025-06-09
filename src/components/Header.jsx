@@ -7,10 +7,7 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const onToggle = () => setIsOpen(!isOpen);
 
-  // Determinamos si estamos en móvil (<=425px)
   const isMobile = useBreakpointValue({ base: true, sm: false }); 
-  // base = 0 - 480px, sm = desde 480px en adelante. Para 425px exacto hay que personalizar el theme,
-  // pero sm es lo más cercano. Si necesitás exacto, hay que usar window.innerWidth con useEffect.
 
   return (
     <Box
@@ -22,13 +19,11 @@ const Header = () => {
       bg="transparent"
       p={4}
       color="white"
-      // Para que el menú horizontal tenga fondo con esmerilado
       style={{
         backdropFilter: !isMobile ? "blur(10px)" : "none",
         WebkitBackdropFilter: !isMobile ? "blur(10px)" : "none",
       }}
     >
-      {/* Menú hamburguesa solo en móvil */}
       {isMobile && (
         <>
           <IconButton
@@ -109,14 +104,11 @@ const Header = () => {
         </>
       )}
 
-      {/* Menú horizontal solo en pantallas > 425px */}
       {!isMobile && (
         <HStack
           spacing={8}
           justify="center"
-          // Menú fijo y transparente con esmerilado
           bg="transparent"
-          // backdropFilter aplicado en el Box padre
           pt={2}
           pb={2}
           userSelect="none"
@@ -140,7 +132,6 @@ const Header = () => {
               _hover={{
                 color: "teal.300",
                 textDecoration: "none",
-                // fondo esmerilado debajo del texto con blur y transparencia
                 _after: {
                   content: '""',
                   position: "absolute",
