@@ -1,11 +1,11 @@
-import { Box, Heading, Image, Text, Link, Stack } from "@chakra-ui/react";
+import { Box, Heading, Image, Text, Link, Stack, Flex } from "@chakra-ui/react";
 
 const projects = [
   {
     id: 1,
     title: "Ecommerce Proyecto Final React",
     description:
-      "Este proyecto es una aplicación para mostrar productos de una base de datos, con funcionalidades de búsqueda, filtrado por precio y favoritos, utilizando Firebase como backend y Chakra UI para la interfaz.",
+      "Aplicación de ecommerce desarrollada con React que simula la experiencia de compra de productos. Permite explorar una base de datos de artículos, aplicar filtros por precio, buscar por nombre, marcar favoritos y gestionar un carrito de compras interactivo. La app simula una compra final mediante una confirmación visual. Utiliza Firebase como backend simulado y está diseñada con Chakra UI para lograr una interfaz accesible y responsive. Incluye navegación dinámica con React Router, formularios optimizados con react-hook-form y animaciones suaves con framer-motion.",
     image: "/images/proyecto1.png",
     link: "https://github.com/Natalia-Schwindt/proyectoFinalReact",
   },
@@ -13,7 +13,7 @@ const projects = [
     id: 2,
     title: "Lista de Tareas",
     description:
-      "Este proyecto es para crear listas de tareas, realizado con React y módulos de Chakra UI. Es un diseño totalmente responsivo, para ser utilizado desde cualquier dispositivo.",
+      "Aplicación desarrollada como proyecto final del Módulo V de ADA ITW. Permite crear y gestionar listas de tareas de forma dinámica, intuitiva y completamente responsiva. El usuario puede añadir tareas, editarlas, filtrarlas por estado (pendientes o realizadas), y eliminarlas según necesidad. El diseño se realizó con React y Chakra UI, asegurando una experiencia de uso fluida desde cualquier dispositivo. Es una herramienta práctica pensada para mejorar la organización personal o laboral. El proyecto utiliza Vite para un entorno de desarrollo rápido y eficiente.",
     image: "/images/proyecto2.png",
     link: "https://github.com/Natalia-Schwindt/todolist",
   },
@@ -21,7 +21,7 @@ const projects = [
     id: 3,
     title: "Buscador de Comics",
     description:
-      "Este proyecto es un buscador de comics, utilizando la API de Marvel para obtener los datos. Se puede buscar por nombre, filtrar por personaje y ordenar por fecha de publicación.",
+      "Aplicación web que permite buscar, filtrar y ordenar cómics y personajes de Marvel usando su API oficial. Cuenta con paginación y muestra resultados en tarjetas responsivas con imágenes y detalles básicos. Desarrollada con HTML, Tailwind CSS y JavaScript puro.",
     image: "/images/proyecto3.png",
     link: "https://github.com/Natalia-Schwindt/buscadorDeComics",
   },
@@ -29,7 +29,7 @@ const projects = [
     id: 4,
     title: "AhorrADAs",
     description:
-      "Proyecto colaborativo para llevar control de gastos e ingresos, con la posibilidad de ver estadísticas y gráficos de los movimientos realizados.",
+      "Aplicación web desarrollada en equipo con otra estudiante, como parte de una práctica colaborativa, orientada a la gestión de finanzas personales. Permite registrar ingresos y gastos, aplicar filtros por tipo, categoría o fecha, y visualizar reportes personalizados. Proyecto realizado con JavaScript Vanilla, Tailwind CSS y LocalStorage. Incluye una versión traducida completamente al ruso, pensada para ampliar el alcance a otros públicos.",
     image: "/images/proyecto4.png",
     link: "https://github.com/Natalia-Schwindt/proyectoAhorrADAs",
   },
@@ -37,7 +37,7 @@ const projects = [
     id: 5,
     title: "Editor de Memes",
     description:
-      "Este proyecto sirve para crear memes personalizados, con texto editable y una variedad de filtros aplicables sobre la imagen.",
+      "Editor de memes desarrollado de forma individual con HTML, CSS y JavaScript Vanilla. La aplicación permite personalizar imágenes agregando texto superior e inferior, con múltiples opciones de edición: fuente, tamaño, alineación, color, contorno, espaciado e interlineado. Incluye además herramientas para modificar la apariencia de la imagen mediante filtros (brillo, contraste, opacidad, desenfoque, entre otros) y una opción para descargar el meme final en formato de imagen. El proyecto se enfocó en la práctica de manipulación del DOM, estilos dinámicos y usabilidad en la edición visual.",
     image: "/images/proyecto5.png",
     link: "https://github.com/Natalia-Schwindt/editordememes",
   },
@@ -45,7 +45,7 @@ const projects = [
     id: 6,
     title: "Proyecto QR",
     description:
-      "En este proyecto se genera un código QR asociado a una página web, permitiendo configurar accesos y opciones de uso específicas.",
+      "Proyecto de diseño web que simula la carta digital de un restaurante. Fue desarrollado con HTML y CSS puros. Las imágenes fueron creadas con inteligencia artificial (Leonardo AI), lo que permitió dar un estilo visual original y coherente. El sitio presenta secciones navegables de bebidas, comidas y postres, acompañadas de descripciones creativas que refuerzan la identidad del restaurante. La experiencia se completa con un código QR que permite acceder fácilmente a la carta desde dispositivos móviles, simulando su uso en un entorno real. Este proyecto fue uno de los más disfrutados, por su combinación de diseño, narrativa y creatividad visual.",
     image: "/images/proyecto6.png",
     link: "https://github.com/Natalia-Schwindt/proyectoqr",
   },
@@ -53,13 +53,7 @@ const projects = [
 
 const Projects = () => {
   return (
-    <Box
-      as="section"
-      py={10}
-      px={4}
-      minH="100vh"
-      color="white"
-    >
+    <Box as="section" mt="60px" py={10} px={4} minH="100vh" color="white">
       <Heading
         as="h2"
         fontSize="3xl"
@@ -72,43 +66,68 @@ const Projects = () => {
       </Heading>
 
       {projects.map((project) => (
-        <Box
-          key={project.id}
-          bg="rgba(255, 255, 255, 0.1)"
-          borderRadius="2xl"
-          boxShadow="0 4px 20px rgba(0, 0, 0, 0.3)"
-          overflow="hidden"
-          mb={10}
-          sx={{
-            backdropFilter: "blur(10px)",
-            WebkitBackdropFilter: "blur(10px)",
-          }}
-        >
-          <Image
-            src={project.image}
-            alt={project.title}
-            width="100%"
-            objectFit="contain"
-          />
+       <Flex
+  key={project.id}
+  direction={{ base: "column", lg: "row" }}
+  align="center"
+  bg="rgba(255, 255, 255, 0.1)"
+  borderRadius="2xl"
+  boxShadow="0 4px 20px rgba(0, 0, 0, 0.3)"
+  overflow="hidden"
+  mb={10}
+  mx="auto"
+  w="100%"
+  maxW={{
+    base: "100%",     // mobile
+    md: "80%",        // tablet
+    lg: "100%",       // laptop
+    xl: "1440px",     // escritorio grande
+  }}
+  sx={{
+    backdropFilter: "blur(10px)",
+    WebkitBackdropFilter: "blur(10px)",
+  }}
+>
+  <Box
+    flexBasis={{ base: "100%", lg: "40%" }}
+    w="100%"
+    sx={{
+      aspectRatio: { base: "auto", md: "4/3" },
+    }}
+  >
+    <Image
+      src={project.image}
+      alt={project.title}
+      w="100%"
+      h="100%"
+      objectFit="contain"
+    />
+  </Box>
 
-          <Stack spacing={3} p={4}>
-            <Heading as="h3" fontSize="xl" color="white">
-              {project.title}
-            </Heading>
-            <Text fontSize="sm" color="whiteAlpha.800">
-              {project.description}
-            </Text>
-            <Link
-              href={project.link}
-              isExternal
-              color="blue.300"
-              fontWeight="medium"
-              _hover={{ color: "blue.500" }}
-            >
-              Ver más →
-            </Link>
-          </Stack>
-        </Box>
+  <Stack
+    flexBasis={{ base: "100%", lg: "60%" }}
+    spacing={4}
+    p={6}
+    textAlign={{ base: "center", lg: "left" }}
+    justify="center"
+  >
+    <Heading as="h3" fontSize="xl" color="white">
+      {project.title}
+    </Heading>
+    <Text fontSize="sm" color="whiteAlpha.800">
+      {project.description}
+    </Text>
+    <Link
+      href={project.link}
+      isExternal
+      color="blue.300"
+      fontWeight="medium"
+      _hover={{ color: "blue.500" }}
+    >
+      Ver más →
+    </Link>
+  </Stack>
+</Flex>
       ))}
     </Box>
   );

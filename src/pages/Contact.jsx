@@ -1,16 +1,11 @@
-import {
-  Box,
-  Heading,
-  Text,
-  Button
-} from "@chakra-ui/react";
+import { Box, Heading, Text } from "@chakra-ui/react";
 
 const Contact = () => {
-
   return (
     <Box
       as="section"
-      p="150px 8px 0"
+      pt="200px"
+      px={["8px", "40px"]}
       textAlign="center"
       color="white"
       h="70vh"
