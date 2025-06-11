@@ -105,28 +105,33 @@ const Projects = () => {
   </Box>
 
   <Stack
-    flexBasis={{ base: "100%", lg: "60%" }}
-    spacing={4}
-    p={6}
-    textAlign={{ base: "center", lg: "left" }}
-    justify="center"
+  flexBasis={{ base: "100%", lg: "60%" }}
+  spacing={4}
+  p={6}
+  textAlign={{ base: "center", lg: "left" }}
+  justify="center"
+>
+  <Heading as="h3" fontSize="xl" color="white">
+    {project.title}
+  </Heading>
+
+  <Text fontSize={["md", "lg", "xl", "lg", "xl"]} color="whiteAlpha.800">
+    {project.description}
+  </Text>
+
+  <Link
+    href={project.link}
+    isExternal
+    fontSize={["md", "lg", "xl", "lg", "xl"]}
+    color="blue.300"
+    fontWeight="medium"
+    _hover={{ color: "blue.500" }}
   >
-    <Heading as="h3" fontSize="xl" color="white">
-      {project.title}
-    </Heading>
-    <Text fontSize="sm" color="whiteAlpha.800">
-      {project.description}
-    </Text>
-    <Link
-      href={project.link}
-      isExternal
-      color="blue.300"
-      fontWeight="medium"
-      _hover={{ color: "blue.500" }}
-    >
-      Ver más →
-    </Link>
-  </Stack>
+    Ver más →
+  </Link>
+</Stack>
+
+
 </Flex>
       ))}
     </Box>
