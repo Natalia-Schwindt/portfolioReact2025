@@ -35,7 +35,6 @@ const Header = () => {
         WebkitBackdropFilter: !isMobile ? "blur(10px)" : "none",
       }}
     >
-      {/* 🔤 Selector de idioma siempre visible */}
       <Box position="absolute" top="1rem" right="1rem" zIndex="1001">
         <HStack spacing={2}>
           <ChakraLink
