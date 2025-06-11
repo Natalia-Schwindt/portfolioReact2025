@@ -23,20 +23,40 @@ function App() {
       bgRepeat="no-repeat"
       bgAttachment="fixed"
       overflowX="hidden"
+      position="relative"
     >
-      <Header />
+      <Box
+        position="fixed"
+        top={0}
+        left={0}
+        right={0}
+        bottom={0}
+        bg="rgba(0, 0, 0, 0.15)"
+        zIndex={0}
+        pointerEvents="none"
+      />
 
-      <Box flex="1">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/presentation" element={<Presentation />} />
-          <Route path="/skills" element={<Skills />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
+      <Box
+        zIndex={1}
+        position="relative"
+        display="flex"
+        flexDirection="column"
+        minHeight="100vh"
+      >
+        <Header />
+
+        <Box flex="1">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/presentation" element={<Presentation />} />
+            <Route path="/skills" element={<Skills />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </Box>
+
+        <Footer />
       </Box>
-
-      <Footer />
     </Box>
   );
 }
