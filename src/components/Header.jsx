@@ -118,51 +118,53 @@ const Header = () => {
 
       {!isMobile && (
         <HStack
-          spacing={8}
-          justify="center"
-          bg="transparent"
-          pt={2}
-          pb={2}
-          userSelect="none"
-        >
-          {[
-            { label: "Inicio", path: "/" },
-            { label: "Sobre mí", path: "/presentation" },
-            { label: "Habilidades", path: "/skills" },
-            { label: "Proyectos", path: "/projects" },
-            { label: "Contacto", path: "/contact" },
-          ].map(({ label, path }) => (
-            <ChakraLink
-              key={label}
-              as={RouterLink}
-              to={path}
-              color="white"
-              fontWeight="bold"
-              textDecoration="none"
-              position="relative"
-              px={2}
-              py={1}
-              _hover={{
-                color: "teal.300",
-                textDecoration: "none",
-                _after: {
-                  content: '""',
-                  position: "absolute",
-                  left: 0,
-                  right: 0,
-                  bottom: 0,
-                  height: "100%",
-                  bg: "rgba(255, 255, 255, 0.15)",
-                  backdropFilter: "blur(8px)",
-                  borderRadius: "md",
-                  zIndex: -1,
-                },
-              }}
-            >
-              {label}
-            </ChakraLink>
-          ))}
-        </HStack>
+  spacing={8}
+  justify="center"
+  bg="transparent"
+  pt={2}
+  pb={2}
+  userSelect="none"
+>
+  {[
+    { label: "Inicio", path: "/" },
+    { label: "Sobre mí", path: "/presentation" },
+    { label: "Habilidades", path: "/skills" },
+    { label: "Proyectos", path: "/projects" },
+    { label: "Contacto", path: "/contact" },
+  ].map(({ label, path }) => (
+    <ChakraLink
+      key={label}
+      as={RouterLink}
+      to={path}
+      color="white"
+      fontWeight="bold"
+      fontSize={{ base: "md", md: "md", lg: "md", xl: "xl", "2xl": "2xl" }}
+      textDecoration="none"
+      position="relative"
+      px={2}
+      py={1}
+      _hover={{
+        color: "teal.300",
+        textDecoration: "none",
+        _after: {
+          content: '""',
+          position: "absolute",
+          left: 0,
+          right: 0,
+          bottom: 0,
+          height: "100%",
+          bg: "rgba(255, 255, 255, 0.15)",
+          backdropFilter: "blur(8px)",
+          borderRadius: "md",
+          zIndex: -1,
+        },
+      }}
+    >
+      {label}
+    </ChakraLink>
+  ))}
+</HStack>
+
       )}
     </Box>
   );
