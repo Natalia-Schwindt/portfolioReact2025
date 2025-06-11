@@ -1,0 +1,79 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Me",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+
+  "home": {
+    "title": "Web Portfolio 2025",
+    "subtitle": "Frontend Development with React & Chakra UI"
+  },
+
+  "presentation": {
+    "title": "About Me",
+    "paragraph1": "My name is <strong>Natalia Schwindt</strong>. I am a frontend developer specializing in React and Chakra UI. I focus on creating clean, responsive, and accessible digital experiences.",
+    "paragraph2": "I aim to combine attractive design with functional code, always learning new tools and technologies to grow professionally."
+  },
+
+  "skills": {
+    "title": "Technologies & Technical Skills",
+    "categories": {
+      "Frontend": "Frontend",
+      "Backend": "Backend",
+      "Herramientas": "Tools"
+    },
+    "softSkillsTitle": "Soft Skills",
+    "softSkills": [
+      "Communication",
+      "Teamwork",
+      "Problem Solving",
+      "Critical Thinking",
+      "Adaptability",
+      "Time Management",
+      "Creativity",
+      "Empathy",
+      "Leadership"
+    ]
+  },
+
+  "projectsTitle": "My Projects",
+  "seeMore": "See more →",
+  "projects": [
+    {
+      "title": "Ecommerce Final Project with React",
+      "description": "Ecommerce application developed with React that simulates the experience of purchasing products. It allows users to browse a database of items, filter by price, search by name, mark favorites, and manage an interactive shopping cart. The app simulates a final purchase through visual confirmation. It uses Firebase as a mock backend and is styled with Chakra UI to provide a responsive and accessible interface. Includes dynamic navigation with React Router, optimized forms with react-hook-form, and smooth animations with framer-motion."
+    },
+    {
+      "title": "To-Do List",
+      "description": "Application developed as the final project for Module V at ADA ITW. It allows users to create and manage task lists dynamically and responsively. Users can add, edit, filter by status (pending or completed), and delete tasks as needed. Designed with React and Chakra UI, it offers a smooth user experience on any device. The project uses Vite for a fast and efficient development environment."
+    },
+    {
+      "title": "Comics Searcher",
+      "description": "Web application that allows searching, filtering, and sorting Marvel comics and characters using the official API. It includes pagination and displays results in responsive cards with images and basic details. Developed with HTML, Tailwind CSS, and vanilla JavaScript."
+    },
+    {
+      "title": "AhorrADAs",
+      "description": "Web application developed collaboratively with another student as a team practice, focused on managing personal finances. It allows users to register income and expenses, apply filters by type, category, or date, and view personalized reports. The project was built with vanilla JavaScript, Tailwind CSS, and LocalStorage. It also includes a full Russian translation to reach a wider audience."
+    },
+    {
+      "title": "Meme Editor",
+      "description": "Meme editor developed individually using HTML, CSS, and vanilla JavaScript. The app lets users add top and bottom text to images with many styling options including font, size, alignment, color, outline, spacing, and line height. It also includes filters (brightness, contrast, opacity, blur, etc.) and allows downloading the final meme as an image. The project focused on DOM manipulation, dynamic styling, and user-friendly visual editing."
+    },
+    {
+      "title": "QR Project",
+      "description": "Web design project that simulates a restaurant's digital menu. Developed using only HTML and CSS. Images were created with Leonardo AI, giving the project a unique and cohesive visual identity. The site includes navigable sections for drinks, meals, and desserts, with creative descriptions to enhance the brand identity. The experience is rounded out with a QR code for easy mobile access, simulating real-world use. This was one of the most enjoyable projects due to its blend of design, storytelling, and creativity."
+    }
+  ],
+
+  "contact": {
+    "title": "Contact",
+    "text": "Would you like to collaborate with me, have any questions, or just want to learn more about my work? I am here to help and happy to connect with you. Don’t hesitate to write to me; I always respond eager to chat and explore new opportunities. It will be a pleasure to receive your message!"
+  },
+
+  "footer": {
+    "createdBy": "Created by Natalia Schwindt © 2025"
+  }
+}

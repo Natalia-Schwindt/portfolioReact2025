@@ -30,6 +30,8 @@ import {
 
 import { FaJava, FaBrain } from "react-icons/fa";
 
+import { useTranslation } from "react-i18next";
+
 const skills = {
   Frontend: [
     { name: "HTML", icon: SiHtml5, color: "#E34F26" },
@@ -57,19 +59,11 @@ const skills = {
   ],
 };
 
-const softSkills = [
-  "Comunicación",
-  "Trabajo en equipo",
-  "Resolución de problemas",
-  "Pensamiento crítico",
-  "Adaptabilidad",
-  "Gestión del tiempo",
-  "Creatividad",
-  "Empatía",
-  "Liderazgo",
-];
-
 const Skills = () => {
+  const { t } = useTranslation();
+
+  const softSkills = t("skills.softSkills", { returnObjects: true });
+
   return (
     <Box as="section" mt="60px" py={10} px={4} minH="100vh" color="white">
       <Heading
@@ -80,7 +74,7 @@ const Skills = () => {
         fontWeight="bold"
         textShadow="2px 2px 4px rgba(0, 0, 0, 0.7)"
       >
-        Tecnologías & Habilidades Técnicas
+        {t("skills.title")}
       </Heading>
 
       <Stack spacing={10}>
@@ -93,7 +87,7 @@ const Skills = () => {
               color="blue.500"
               textAlign="center"
             >
-              {category}
+              {t(`skills.categories.${category}`)}
             </Heading>
             <Wrap justify="center" spacing={4}>
               {items.map(({ name, icon, color }) => {
@@ -135,7 +129,7 @@ const Skills = () => {
             color="green.300"
             textAlign="center"
           >
-            Habilidades Blandas
+            {t("skills.softSkillsTitle")}
           </Heading>
           <Wrap justify="center" spacing={4}>
             {softSkills.map((skill) => (

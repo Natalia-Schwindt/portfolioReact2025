@@ -1,7 +1,10 @@
 import { Box, Link, Icon, Text, HStack, VStack } from "@chakra-ui/react";
 import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { t } = useTranslation();
+
   return (
     <Box
       as="footer"
@@ -38,7 +41,7 @@ const Footer = () => {
         </HStack>
 
         <Text fontSize={{ base: "sm", lg: "md" }} textAlign="center">
-          Creado por Natalia Schwindt © 2025
+          {t("footer.createdBy")}
         </Text>
       </VStack>
     </Box>

@@ -1,5 +1,14 @@
+import i18n from "../i18n";
+import { useTranslation } from "react-i18next";
 import { Link as RouterLink } from "react-router-dom";
-import { IconButton, Box, HStack, VStack, Link as ChakraLink, useBreakpointValue } from "@chakra-ui/react";
+import {
+  IconButton,
+  Box,
+  HStack,
+  VStack,
+  Link as ChakraLink,
+  useBreakpointValue,
+} from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { useState } from "react";
 
@@ -7,7 +16,9 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const onToggle = () => setIsOpen(!isOpen);
 
-  const isMobile = useBreakpointValue({ base: true, sm: false }); 
+  const isMobile = useBreakpointValue({ base: true, sm: false });
+
+  const { t } = useTranslation();
 
   return (
     <Box
@@ -24,6 +35,42 @@ const Header = () => {
         WebkitBackdropFilter: !isMobile ? "blur(10px)" : "none",
       }}
     >
+      {/* 🔤 Selector de idioma siempre visible */}
+      <Box position="absolute" top="1rem" right="1rem" zIndex="1001">
+        <HStack spacing={2}>
+          <ChakraLink
+            onClick={() => i18n.changeLanguage("es")}
+            fontWeight={i18n.language === "es" ? "bold" : "normal"}
+            textDecoration={i18n.language === "es" ? "underline" : "none"}
+            cursor="pointer"
+            color="white"
+            fontSize="sm"
+          >
+            ES
+          </ChakraLink>
+          <ChakraLink
+            onClick={() => i18n.changeLanguage("en")}
+            fontWeight={i18n.language === "en" ? "bold" : "normal"}
+            textDecoration={i18n.language === "en" ? "underline" : "none"}
+            cursor="pointer"
+            color="white"
+            fontSize="sm"
+          >
+            EN
+          </ChakraLink>
+          <ChakraLink
+            onClick={() => i18n.changeLanguage("ru")}
+            fontWeight={i18n.language === "ru" ? "bold" : "normal"}
+            textDecoration={i18n.language === "ru" ? "underline" : "none"}
+            cursor="pointer"
+            color="white"
+            fontSize="sm"
+          >
+            RU
+          </ChakraLink>
+        </HStack>
+      </Box>
+
       {isMobile && (
         <>
           <IconButton
@@ -60,7 +107,7 @@ const Header = () => {
                   pl={4}
                   _hover={{ textDecoration: "none", color: "teal.300" }}
                 >
-                  Inicio
+                  {t("nav.home")}
                 </ChakraLink>
                 <ChakraLink
                   as={RouterLink}
@@ -72,7 +119,7 @@ const Header = () => {
                   pl={4}
                   _hover={{ textDecoration: "none", color: "teal.300" }}
                 >
-                  Sobre mí
+                  {t("nav.about")}
                 </ChakraLink>
                 <ChakraLink
                   as={RouterLink}
@@ -84,7 +131,7 @@ const Header = () => {
                   pl={4}
                   _hover={{ textDecoration: "none", color: "teal.300" }}
                 >
-                  Habilidades
+                  {t("nav.skills")}
                 </ChakraLink>
                 <ChakraLink
                   as={RouterLink}
@@ -96,7 +143,7 @@ const Header = () => {
                   pl={4}
                   _hover={{ textDecoration: "none", color: "teal.300" }}
                 >
-                  Proyectos
+                  {t("nav.projects")}
                 </ChakraLink>
                 <ChakraLink
                   as={RouterLink}
@@ -108,7 +155,7 @@ const Header = () => {
                   pl={4}
                   _hover={{ textDecoration: "none", color: "teal.300" }}
                 >
-                  Contacto
+                  {t("nav.contact")}
                 </ChakraLink>
               </VStack>
             </Box>
@@ -118,53 +165,58 @@ const Header = () => {
 
       {!isMobile && (
         <HStack
-  spacing={8}
-  justify="center"
-  bg="transparent"
-  pt={2}
-  pb={2}
-  userSelect="none"
->
-  {[
-    { label: "Inicio", path: "/" },
-    { label: "Sobre mí", path: "/presentation" },
-    { label: "Habilidades", path: "/skills" },
-    { label: "Proyectos", path: "/projects" },
-    { label: "Contacto", path: "/contact" },
-  ].map(({ label, path }) => (
-    <ChakraLink
-      key={label}
-      as={RouterLink}
-      to={path}
-      color="white"
-      fontWeight="bold"
-      fontSize={{ base: "md", md: "md", lg: "md", xl: "xl", "2xl": "2xl" }}
-      textDecoration="none"
-      position="relative"
-      px={2}
-      py={1}
-      _hover={{
-        color: "teal.300",
-        textDecoration: "none",
-        _after: {
-          content: '""',
-          position: "absolute",
-          left: 0,
-          right: 0,
-          bottom: 0,
-          height: "100%",
-          bg: "rgba(255, 255, 255, 0.15)",
-          backdropFilter: "blur(8px)",
-          borderRadius: "md",
-          zIndex: -1,
-        },
-      }}
-    >
-      {label}
-    </ChakraLink>
-  ))}
-</HStack>
-
+          spacing={8}
+          justify="center"
+          bg="transparent"
+          pt={2}
+          pb={2}
+          userSelect="none"
+        >
+          {[
+            { label: t("nav.home"), path: "/" },
+            { label: t("nav.about"), path: "/presentation" },
+            { label: t("nav.skills"), path: "/skills" },
+            { label: t("nav.projects"), path: "/projects" },
+            { label: t("nav.contact"), path: "/contact" },
+          ].map(({ label, path }) => (
+            <ChakraLink
+              key={label}
+              as={RouterLink}
+              to={path}
+              color="white"
+              fontWeight="bold"
+              fontSize={{
+                base: "md",
+                md: "md",
+                lg: "md",
+                xl: "xl",
+                "2xl": "2xl",
+              }}
+              textDecoration="none"
+              position="relative"
+              px={2}
+              py={1}
+              _hover={{
+                color: "teal.300",
+                textDecoration: "none",
+                _after: {
+                  content: '""',
+                  position: "absolute",
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  height: "100%",
+                  bg: "rgba(255, 255, 255, 0.15)",
+                  backdropFilter: "blur(8px)",
+                  borderRadius: "md",
+                  zIndex: -1,
+                },
+              }}
+            >
+              {label}
+            </ChakraLink>
+          ))}
+        </HStack>
       )}
     </Box>
   );
