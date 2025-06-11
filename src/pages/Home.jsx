@@ -3,7 +3,13 @@ import { Box, Heading, Text } from "@chakra-ui/react";
 const Home = () => {
   return (
     <Box flex="1" display="flex" alignItems="center" justifyContent="center" px={4}>
-      <Box textAlign="center">
+      <Box
+        textAlign="center"
+        px={[4, 6]}
+        py={[3, 5]}
+        borderRadius="xl"
+        bg="radial-gradient(circle, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 80%, transparent 100%)"
+      >
         <Heading
           as="h1"
           pt={250}
