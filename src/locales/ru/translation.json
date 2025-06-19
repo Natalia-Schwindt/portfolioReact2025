@@ -9,7 +9,7 @@
 
   "home": {
     "title": "Веб-портфолио 2025",
-    "subtitle": "Фронтенд-разработка с React и Chakra UI"
+    "subtitle": "Фронтенд-разработка с использованием React и Chakra UI"
   },
 
   "presentation": {
@@ -74,6 +74,6 @@
   },
 
   "footer": {
-    "createdBy": "Создано Наталией Швиндт © 2025"
+     "createdBy": "Создано Натальей Швиндт © 2025"
   }
 }
