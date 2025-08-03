@@ -5,31 +5,33 @@ const Home = () => {
   const { t } = useTranslation();
 
   return (
-    <Box flex="1" display="flex" alignItems="center" justifyContent="center" px={4}>
-      <Box
-        textAlign="center"
-        px={[4, 6]}
-        py={[3, 5]}
-        borderRadius="xl"
-        bg="radial-gradient(circle, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 80%, transparent 100%)"
-      >
-        <Heading
-          as="h1"
-          pt={250}
-          fontSize={["4xl", "5xl", "6xl", "7xl"]}
-          color="white"
-          lineHeight="short"
-          textShadow="2px 2px 4px rgba(0, 0, 0, 0.7)"
-        >
-          {t("home.title")}
-        </Heading>
-
+    <Box
+      flex="1"
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+      px={4}
+    >
+      <Box textAlign="center" px={[4, 6]} py={[3, 5]} borderRadius="xl">
+       <Heading
+  as="h1"
+  pt={180}
+  fontSize={["5xl", "6xl", "7xl", "8xl"]}
+  bgGradient="linear(to-r, #fb0707ff, #0db781ff)"
+  bgClip="text"
+  lineHeight="short"
+  fontFamily="heading"
+  fontWeight="900"
+  textShadow="4px 4px 10px rgba(43, 42, 42, 0.34), 6px 6px 14px rgba(0, 0, 0, 0.46)"
+>
+  {t("home.title")}
+</Heading>
         <Text
           fontSize={["lg", "xl", "2xl", "3xl"]}
           fontWeight="semibold"
-          color="white"
-          m={2}
-          textShadow="1px 1px 3px rgba(0, 0, 0, 0.6)"
+          color="teal.500"
+          m={[8, 0, 32]}
+          textShadow="1px 1px 2px rgba(0, 0, 0, 0.5)"
         >
           {t("home.subtitle")}
         </Text>

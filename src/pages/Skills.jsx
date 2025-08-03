@@ -65,14 +65,21 @@ const Skills = () => {
   const softSkills = t("skills.softSkills", { returnObjects: true });
 
   return (
-    <Box as="section" mt="60px" py={10} px={4} minH="100vh" color="white">
+    <Box as="section" mt="60px" py={6} px={8}>
       <Heading
         as="h2"
-        fontSize="3xl"
+        fontSize={{
+          base: "2xl",
+          md: "3xl",
+          lg: "3xl",
+          xl: "4xl",
+          "2xl": "5xl",
+        }}
+        color="#cc5500"
         textAlign="center"
         mb={8}
         fontWeight="bold"
-        textShadow="2px 2px 4px rgba(0, 0, 0, 0.7)"
+        textShadow="5px 5px 12px rgba(0, 0, 0, 0.89)"
       >
         {t("skills.title")}
       </Heading>
@@ -82,7 +89,7 @@ const Skills = () => {
           <Box key={category}>
             <Heading
               as="h3"
-              fontSize="2xl"
+              fontSize="xl"
               mb={4}
               color="blue.500"
               textAlign="center"
@@ -95,12 +102,12 @@ const Skills = () => {
                 return (
                   <WrapItem key={name}>
                     <Badge
-                      px={4}
-                      py={2}
-                      fontSize="md"
+                      px={3}
+                      py={1.5}
+                      fontSize="sm"
                       borderRadius="full"
                       color="white"
-                      bg="rgba(255, 255, 255, 0.1)"
+                      bg="rgba(255, 255, 255, 0.2)"
                       sx={{
                         backdropFilter: "blur(10px)",
                         WebkitBackdropFilter: "blur(10px)",
@@ -124,7 +131,7 @@ const Skills = () => {
         <Box>
           <Heading
             as="h3"
-            fontSize="2xl"
+            fontSize="xl"
             mb={4}
             color="green.300"
             textAlign="center"
@@ -135,12 +142,12 @@ const Skills = () => {
             {softSkills.map((skill) => (
               <WrapItem key={skill}>
                 <Badge
-                  px={4}
-                  py={2}
-                  fontSize="md"
+                  px={3}
+                  py={1.5}
+                  fontSize="sm"
                   borderRadius="full"
                   color="white"
-                  bg="rgba(255, 255, 255, 0.3)"
+                  bg="rgba(255, 255, 255, 0.2)"
                   sx={{
                     backdropFilter: "blur(10px)",
                     WebkitBackdropFilter: "blur(10px)",

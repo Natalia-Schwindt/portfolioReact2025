@@ -7,7 +7,7 @@ const Presentation = () => {
   return (
     <Box
       as="section"
-      pt="200px"
+      pt="100px"
       px={["8px", "40px"]}
       color="white"
       textAlign="center"
@@ -16,7 +16,8 @@ const Presentation = () => {
         as="h2"
         fontSize={["2xl", "3xl", "3xl", "4xl", "5xl"]}
         mb={6}
-        textShadow="2px 2px 3px rgba(0,0,0,1)"
+        color="#cc5500"
+        textShadow="5px 5px 12px rgba(0, 0, 0, 0.89)"
       >
         {t("presentation.title")}
       </Heading>
@@ -27,11 +28,12 @@ const Presentation = () => {
           px={[4, 6]}
           py={[3, 5]}
           borderRadius="xl"
-          bg="radial-gradient(circle, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 80%, transparent 100%)"
+          backdropFilter="blur(8px)"
         >
           <Text
             fontSize={["md", "lg", "lg", "xl", "2xl"]}
             fontWeight="semibold"
+            color="teal.400"
           >
             <Trans i18nKey="presentation.paragraph1" components={{ strong: <strong /> }} />
           </Text>
@@ -42,11 +44,12 @@ const Presentation = () => {
           px={[4, 6]}
           py={[3, 5]}
           borderRadius="xl"
-          bg="radial-gradient(circle, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 80%, transparent 100%)"
+          backdropFilter="blur(8px)"
         >
           <Text
             fontSize={["md", "lg", "lg", "xl", "2xl"]}
             fontWeight="semibold"
+            color="teal.400"
           >
             {t("presentation.paragraph2")}
           </Text>

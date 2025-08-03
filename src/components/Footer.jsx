@@ -10,14 +10,8 @@ const Footer = () => {
       as="footer"
       py={6}
       mt={8}
-      color="white"
-      bg={{ base: "transparent", lg: "rgba(0, 0, 0, 0.4)" }}
-      sx={{
-        backdropFilter: { lg: "blur(6px)" },
-        WebkitBackdropFilter: { lg: "blur(6px)" },
-        boxShadow: { lg: "0 2px 10px rgba(0, 0, 0, 0.3)" },
-        borderTop: { lg: "1px solid rgba(255, 255, 255, 0.2)" },
-      }}
+      color="#d46c22ff"
+      bg="transparent"
     >
       <VStack spacing={4}>
         <HStack spacing={6}>
@@ -25,6 +19,11 @@ const Footer = () => {
             href="https://www.linkedin.com/in/natalia-schwindt-3a3438115/"
             isExternal
             aria-label="LinkedIn"
+            _hover={{
+              transform: "scale(1.1)",
+              boxShadow: "0 0 15px 5px rgba(209, 206, 196, 0.5)",
+              transition: "all 0.2s ease-in-out",
+            }}
           >
             <Icon as={FaLinkedin} boxSize={{ base: 6, lg: 7 }} />
           </Link>
@@ -32,17 +31,26 @@ const Footer = () => {
             href="https://github.com/Natalia-Schwindt"
             isExternal
             aria-label="GitHub"
+            _hover={{
+              transform: "scale(1.1)",
+              boxShadow: "0 0 15px 5px rgba(209, 206, 196, 0.5)",
+              transition: "all 0.2s ease-in-out",
+            }}
           >
             <Icon as={FaGithub} boxSize={{ base: 6, lg: 7 }} />
           </Link>
-          <Link href="mailto:naty8014l@gmail.com" aria-label="Correo">
+          <Link href="mailto:naty8014l@gmail.com" aria-label="Correo" _hover={{
+              transform: "scale(1.1)",
+              boxShadow: "0 0 15px 5px rgba(209, 206, 196, 0.5)",
+              transition: "all 0.2s ease-in-out",
+            }}>
             <Icon as={FaEnvelope} boxSize={{ base: 6, lg: 7 }} />
           </Link>
         </HStack>
 
-        <Text fontSize={{ base: "sm", lg: "md" }} textAlign="center">
-          {t("footer.createdBy")}
-        </Text>
+        <Text fontSize={{ base: "md", lg: "lg" }} fontWeight="bold" textAlign="center">
+  {t("footer.createdBy")}
+</Text>
       </VStack>
     </Box>
   );

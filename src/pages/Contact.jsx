@@ -18,7 +18,8 @@ const Contact = () => {
         fontSize={{ base: "3xl", md: "4xl", lg: "4xl", xl: "5xl", "2xl": "6xl" }}
         mb={6}
         fontWeight="semibold"
-        textShadow="2px 2px 3px rgba(0,0,0,1)"
+        color="#cc5500"
+        textShadow="5px 5px 12px rgba(0, 0, 0, 0.89)"
       >
         {t("contact.title")}
       </Heading>
@@ -29,12 +30,12 @@ const Contact = () => {
         px={[4, 6]}
         py={[3, 5]}
         borderRadius="xl"
-        bg="radial-gradient(circle, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 80%, transparent 100%)"
+        backdropFilter="blur(8px)"
       >
         <Text
           fontSize={{ base: "md", md: "lg", lg: "lg", xl: "xl", "2xl": "2xl" }}
           fontWeight="semibold"
-          textShadow="2px 2px 3px rgba(0,0,0,1)"
+          color="teal.400"
         >
           {t("contact.text")}
         </Text>

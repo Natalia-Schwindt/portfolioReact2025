@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Box } from "@chakra-ui/react";
 import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
@@ -9,43 +10,42 @@ import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 
 function App() {
+  useEffect(() => {
+    const link = document.createElement('link');
+      link.href = "https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400..900&display=swap";
+    link.rel = "stylesheet";
+    document.head.appendChild(link);
+  }, []);
+
   return (
-    <Box
-      as="main"
-      m={0}
-      p={0}
-      minHeight="100vh"
-      display="flex"
-      flexDirection="column"
-      bgImage="url('/images/fondo.jpg')"
-      bgSize="cover"
-      bgPosition="center"
-      bgRepeat="no-repeat"
-      bgAttachment="fixed"
-      overflowX="hidden"
-      position="relative"
-    >
+    <Box position="relative" width="100vw" height="100vh" overflow="hidden">
       <Box
         position="fixed"
-        top={0}
-        left={0}
-        right={0}
-        bottom={0}
-        bg="rgba(0, 0, 0, 0.15)"
-        zIndex={0}
-        pointerEvents="none"
+        top="0"
+        left="0"
+        width={["0", "0", "30%"]}
+        minWidth="300px"
+        height="100vh"
+        bgImage="url('/images/lateral.png')"
+        bgPosition="center"
+        bgSize="cover"
+        bgRepeat="no-repeat"
+        zIndex={1}
       />
 
       <Box
-        zIndex={1}
-        position="relative"
-        display="flex"
+        marginLeft={["0", "0", "30%"]}
+        width={["100%", "100%", "70%"]}
         flexDirection="column"
         minHeight="100vh"
+        flexGrow={1}
+        bgGradient="linear(to-b, #316e8dff, black)"
+        zIndex={0}
+        display="flex"
       >
         <Header />
 
-        <Box flex="1">
+        <Box flex="1" overflowY="auto">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/presentation" element={<Presentation />} />

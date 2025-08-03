@@ -38,85 +38,100 @@ const Projects = () => {
   const { t } = useTranslation();
 
   return (
-    <Box as="section" mt="60px" py={10} px={4} minH="100vh" color="white">
+    <Flex
+      as="section"
+      mt="60px"
+      px={4}
+      color="white"
+      direction="column"
+      h="100%"
+    >
       <Heading
         as="h2"
-        fontSize="3xl"
+        fontSize={{ base: "3xl", md: "4xl", lg: "4xl", xl: "5xl", "2xl": "6xl" }}
         textAlign="center"
         mb={8}
-        fontWeight="bold"
-        textShadow="2px 2px 4px rgba(0, 0, 0, 0.7)"
+        fontWeight="semibold"
+        color="#cc5500"
+        textShadow="5px 5px 12px rgba(0, 0, 0, 0.89)"
       >
         {t("projectsTitle")}
       </Heading>
 
-      {projects.map((project, index) => (
-        <Flex
-          key={project.id}
-          direction={{ base: "column", lg: "row" }}
-          align="center"
-          bg="rgba(255, 255, 255, 0.1)"
-          borderRadius="2xl"
-          boxShadow="0 4px 20px rgba(0, 0, 0, 0.3)"
-          overflow="hidden"
-          mb={10}
-          mx="auto"
-          w="100%"
-          maxW={{
-            base: "100%",
-            md: "80%",
-            lg: "100%",
-            xl: "1440px",
-          }}
-          sx={{
-            backdropFilter: "blur(10px)",
-            WebkitBackdropFilter: "blur(10px)",
-          }}
-        >
-          <Box
-            flexBasis={{ base: "100%", lg: "40%" }}
-            w="100%"
-            sx={{ aspectRatio: { base: "auto", md: "4/3" } }}
+      <Box 
+        maxH="calc(95vh - 350px)"
+        overflowY="auto" 
+        pb={4}
+        flex="1"
+      >
+        {projects.map((project, index) => (
+          <Flex
+            key={project.id}
+            direction={{ base: "column", lg: "row" }}
+            align="center"
+            bg="rgba(255, 255, 255, 0.1)"
+            borderRadius="2xl"
+            boxShadow="0 4px 20px rgba(0, 0, 0, 0.3)"
+            overflow="hidden"
+            mb={10}
+            mx="auto"
+            maxW={{
+              base: "100%",
+              md: "90%",
+              lg: "90%",
+              xl: "1200px",
+            }}
+            sx={{
+              backdropFilter: "blur(10px)",
+              WebkitBackdropFilter: "blur(10px)",
+            }}
           >
-            <Image
-              src={project.image}
-              alt={t(`projects.${index}.title`)}
+            <Box
+              flexBasis={{ base: "100%", lg: "40%" }}
               w="100%"
-              h="100%"
-              objectFit="contain"
-            />
-          </Box>
-
-          <Stack
-            flexBasis={{ base: "100%", lg: "60%" }}
-            spacing={4}
-            p={6}
-            textAlign={{ base: "center", lg: "left" }}
-            justify="center"
-          >
-            <Heading as="h3" fontSize="xl" color="white">
-              {t(`projects.${index}.title`)}
-            </Heading>
-
-            <Text fontSize={["md", "lg", "xl"]} color="whiteAlpha.800">
-              {t(`projects.${index}.description`)}
-            </Text>
-
-            <Link
-              href={project.link}
-              isExternal
-              rel="noopener noreferrer"
-              fontSize={["md", "lg", "xl"]}
-              color="blue.300"
-              fontWeight="medium"
-              _hover={{ color: "blue.500" }}
+              position="relative"
+              maxH="300px"
             >
-              {t("seeMore")}
-            </Link>
-          </Stack>
-        </Flex>
-      ))}
-    </Box>
+              <Image
+                src={project.image}
+                alt={t(`projects.${index}.title`)}
+                w="100%"
+                h="100%"
+                objectFit="cover"
+              />
+            </Box>
+
+            <Stack
+              flexBasis={{ base: "100%", lg: "60%" }}
+              spacing={4}
+              p={6}
+              textAlign={{ base: "center", lg: "left" }}
+              justify="center"
+            >
+              <Heading as="h3" fontSize="xl" color="white">
+                {t(`projects.${index}.title`)}
+              </Heading>
+
+              <Text fontSize={["md", "lg", "xl"]} color="whiteAlpha.800">
+                {t(`projects.${index}.description`)}
+              </Text>
+
+              <Link
+                href={project.link}
+                isExternal
+                rel="noopener noreferrer"
+                fontSize={["md", "lg", "xl"]}
+                color="blue.300"
+                fontWeight="medium"
+                _hover={{ color: "blue.500" }}
+              >
+                {t("seeMore")}
+              </Link>
+            </Stack>
+          </Flex>
+        ))}
+      </Box>
+    </Flex>
   );
 };
 
