@@ -40,7 +40,7 @@ const Projects = () => {
   return (
     <Flex
       as="section"
-      mt="60px"
+      mt={{ base: "90px", md: "0px" }}
       px={4}
       color="white"
       direction="column"
@@ -50,7 +50,7 @@ const Projects = () => {
         as="h2"
         fontSize={{ base: "3xl", md: "4xl", lg: "4xl", xl: "5xl", "2xl": "6xl" }}
         textAlign="center"
-        mb={8}
+        mb={{ base: 8, xl: 4 }}
         fontWeight="semibold"
         color="#cc5500"
         textShadow="5px 5px 12px rgba(0, 0, 0, 0.89)"
@@ -59,15 +59,14 @@ const Projects = () => {
       </Heading>
 
       <Box 
-        maxH="calc(95vh - 350px)"
-        overflowY="auto" 
-        pb={4}
+        maxH={{ base: "calc(95vh - 345px)", lg: "calc(90vh - 200px)" }}
+        overflowY="auto"
         flex="1"
       >
         {projects.map((project, index) => (
           <Flex
             key={project.id}
-            direction={{ base: "column", lg: "row" }}
+            direction={{ base: "column", xl: "row" }}
             align="center"
             bg="rgba(255, 255, 255, 0.1)"
             borderRadius="2xl"
@@ -87,10 +86,10 @@ const Projects = () => {
             }}
           >
             <Box
-              flexBasis={{ base: "100%", lg: "40%" }}
+              flexBasis={{ base: "100%", lg: "45%" }}
               w="100%"
               position="relative"
-              maxH="300px"
+              // maxH="300px"
             >
               <Image
                 src={project.image}
@@ -102,7 +101,7 @@ const Projects = () => {
             </Box>
 
             <Stack
-              flexBasis={{ base: "100%", lg: "60%" }}
+              flexBasis={{ base: "100%", lg: "55%" }}
               spacing={4}
               p={6}
               textAlign={{ base: "center", lg: "left" }}
@@ -112,7 +111,7 @@ const Projects = () => {
                 {t(`projects.${index}.title`)}
               </Heading>
 
-              <Text fontSize={["md", "lg", "xl"]} color="whiteAlpha.800">
+              <Text fontSize={{ base: "md", md: "lg", lg: "md", "2xl": "lg" }} color="whiteAlpha.800">
                 {t(`projects.${index}.description`)}
               </Text>
 
@@ -120,7 +119,7 @@ const Projects = () => {
                 href={project.link}
                 isExternal
                 rel="noopener noreferrer"
-                fontSize={["md", "lg", "xl"]}
+                fontSize={{ base: "md", md: "lg", lg: "xl" }}
                 color="blue.300"
                 fontWeight="medium"
                 _hover={{ color: "blue.500" }}

@@ -65,7 +65,7 @@ const Skills = () => {
   const softSkills = t("skills.softSkills", { returnObjects: true });
 
   return (
-    <Box as="section" mt="60px" py={6} px={8}>
+    <Box as="section" mt={{ base: "80px", md: "10px" }} py={4} px={6}>
       <Heading
         as="h2"
         fontSize={{
@@ -77,14 +77,14 @@ const Skills = () => {
         }}
         color="#cc5500"
         textAlign="center"
-        mb={8}
+        mb={4}
         fontWeight="bold"
         textShadow="5px 5px 12px rgba(0, 0, 0, 0.89)"
       >
         {t("skills.title")}
       </Heading>
 
-      <Stack spacing={10}>
+      <Stack spacing={8}>
         {Object.entries(skills).map(([category, items]) => (
           <Box key={category}>
             <Heading
@@ -104,7 +104,7 @@ const Skills = () => {
                     <Badge
                       px={3}
                       py={1.5}
-                      fontSize="sm"
+                      fontSize={{ base: "sm", md: "xs", xl: "sm" }}
                       borderRadius="full"
                       color="white"
                       bg="rgba(255, 255, 255, 0.2)"
@@ -144,7 +144,7 @@ const Skills = () => {
                 <Badge
                   px={3}
                   py={1.5}
-                  fontSize="sm"
+                  fontSize={{ base: "sm", md: "xs", xl: "sm" }}
                   borderRadius="full"
                   color="white"
                   bg="rgba(255, 255, 255, 0.2)"

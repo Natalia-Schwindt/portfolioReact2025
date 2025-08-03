@@ -8,8 +8,9 @@ const Footer = () => {
   return (
     <Box
       as="footer"
-      py={6}
-      mt={8}
+      py={{ base: 6, lg: 2 }}
+      mt={{ base: 4, lg: 2 }}
+      mb={{ base: 4, lg: 2 }}
       color="#d46c22ff"
       bg="transparent"
     >
