@@ -14,7 +14,7 @@ const Presentation = () => {
     >
       <Heading
         as="h2"
-        fontSize={["2xl", "3xl", "3xl", "4xl", "5xl"]}
+        fontSize={["2xl", "3xl", "3xl", "4xl"]}
         mb={6}
         color="#cc5500"
         textShadow="5px 5px 12px rgba(0, 0, 0, 0.89)"
@@ -31,7 +31,7 @@ const Presentation = () => {
           backdropFilter="blur(8px)"
         >
           <Text
-            fontSize={["md", "lg", "lg", "xl", "2xl"]}
+            fontSize={["md", "lg", "lg", "xl"]}
             fontWeight="semibold"
             color="teal.400"
           >
@@ -42,7 +42,7 @@ const Presentation = () => {
         <Box
           maxW={["90%", "85%", "700px", "60%", "50%"]}
           px={[4, 6]}
-          py={[3, 5]}
+          py={[3, 4]}
           borderRadius="xl"
           backdropFilter="blur(8px)"
         >
