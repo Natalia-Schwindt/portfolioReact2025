@@ -75,7 +75,8 @@ const Projects = () => {
               base: "100%",
               md: "90%",
               lg: "90%",
-              xl: "1200px",
+              xl: "90%",
+              "2xl": "80%",
             }}
             sx={{
               backdropFilter: "blur(10px)",
