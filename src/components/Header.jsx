@@ -17,8 +17,6 @@ import { useState } from "react";
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const onToggle = () => setIsOpen(!isOpen);
-
-  // El punto de quiebre a "md" (768px) para el menú de hamburguesa está bien
   const isMobile = useBreakpointValue({ base: true, md: false });
   const { t } = useTranslation();
 
@@ -33,7 +31,7 @@ const Header = () => {
       zIndex="1000"
     >
       <Flex justify="space-between" align="center" width="100%">
-        {/* El menú de hamburguesa permanece sin cambios */}
+        {/* El menú de hamburguesa */}
         {isMobile && (
           <IconButton
             aria-label="Abrir o cerrar menú"
@@ -51,10 +49,6 @@ const Header = () => {
         {/* El menú de navegación completo */}
         {!isMobile && (
           <HStack
-            // Ajustamos el espaciado para que se adapte a los diferentes anchos de pantalla
-            // De 768px a 1024px: espaciado de 2
-            // De 1024px a 1300px: espaciado de 4
-            // De 1300px en adelante: espaciado de 8 (el valor original)
             spacing={{ md: 2, lg: 4, "2xl": 8 }}
             bg="transparent"
             pt={2}
@@ -81,7 +75,6 @@ const Header = () => {
                   to={path}
                   color="#d46414ff"
                   fontWeight="bold"
-                  // Reducimos el tamaño de fuente para que no se deforme
                   fontSize={{ md: "sm", lg: "md", "2xl": "lg" }}
                   textDecoration="none"
                   px={2}
@@ -94,9 +87,7 @@ const Header = () => {
           </HStack>
         )}
         
-        {/* El HStack de idiomas permanece sin cambios en su lógica */}
         <HStack spacing={1}>
-          {/* ... (CÓDIGO DE BANDERAS SIN CAMBIOS) ... */}
           <ChakraLink
             onClick={() => i18n.changeLanguage("es")}
             cursor="pointer"
