@@ -15,7 +15,7 @@ function App() {
       <Grid
         minH="100vh"
         templateRows="auto 1fr auto"
-        backgroundColor="primary.850"
+        backgroundColor="background.800"
       >
         <Header />
 

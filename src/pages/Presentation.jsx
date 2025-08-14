@@ -1,78 +1,85 @@
 import { Box, Heading, Text, Stack, Flex } from "@chakra-ui/react";
 import { useTranslation, Trans } from "react-i18next";
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+
+const MotionHeading = motion.create(Heading);
+const MotionText = motion.create(Text);
 
 const Presentation = () => {
   const { t } = useTranslation();
+  const [hasMounted, setHasMounted] = useState(false);
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
+  const headingVariants = {
+    hidden: { x: -200, opacity: 0 },
+    visible: { x: 0, opacity: 1 },
+  };
+
+  const textVariants = {
+    hidden: { y: 50, opacity: 0 },
+    visible: { y: 0, opacity: 1 },
+  };
 
   return (
-    <Flex
-      as="section"
-      direction={{ base: "column", lg: "row" }}
-      justifyContent={{ base: "center", lg: "space-between" }}
-      alignItems={{ base: "center", lg: "flex-start" }}
-      flex="1"
-      p={{ base: "1rem", md: "2rem", lg: "3rem" }}
+    <Box
+      height="100%"
+      display="flex"
+      flexDirection="column"
+      alignItems="center"
+      justifyContent="space-around"
     >
-      {/* Contenedor del título (columna 1) */}
       <Box
-        flexShrink={0}
-        flexBasis={{ base: "100%", lg: "40%" }}
-        textAlign={{ base: "center", lg: "left" }}
-        mb={{ base: "2rem", lg: 0 }}
-        mr={{ lg: "2rem" }}
+        display="flex"
+        textAlign="center"
+        flexDirection="column"
+        gap={8}
+        w="80%"
       >
-        <Heading
+        <MotionHeading
           as="h2"
-          fontSize={["2xl", "3xl", "4xl", "5xl"]}
-          color="#cc5500"
+          fontSize={["5xl", "6xl", "7xl", "8xl"]}
+          color="title.500"
           textShadow="5px 5px 12px rgba(0, 0, 0, 0.89)"
+          variants={headingVariants}
+          initial="hidden"
+          animate={hasMounted ? "visible" : "hidden"}
+          transition={{ duration: 0.5 }}
         >
           {t("presentation.title")}
-        </Heading>
+        </MotionHeading>
+
+        <MotionText
+          fontSize={["md", "lg", "lg", "xl"]}
+          fontWeight="semibold"
+          color="text"
+          variants={textVariants}
+          initial="hidden"
+          animate={hasMounted ? "visible" : "hidden"}
+          transition={{ duration: 0.8, delay: 1 }}
+        >
+          <Trans
+            i18nKey="presentation.paragraph1"
+            components={{ strong: <strong /> }}
+          />
+        </MotionText>
+
+        <MotionText
+          fontSize={["md", "lg", "lg", "xl", "2xl"]}
+          fontWeight="semibold"
+          color="text"
+          variants={textVariants}
+          initial="hidden"
+          animate={hasMounted ? "visible" : "hidden"}
+          transition={{ duration: 0.8, delay: 1 }}
+        >
+          {t("presentation.paragraph2")}
+        </MotionText>
       </Box>
-
-      {/* Contenedor de los párrafos (columna 2) */}
-      <Stack
-        spacing="1.5rem"
-        flexGrow={1}
-        flexBasis={{ base: "100%", lg: "60%" }}
-        alignItems={{ base: "center", lg: "flex-start" }}
-        textAlign={{ base: "center", lg: "left" }}
-      >
-        <Box
-          borderRadius="xl"
-          backdropFilter="blur(8px)"
-          p={{ base: "1rem", md: "1.5rem" }}
-          w="100%"
-        >
-          <Text
-            fontSize={["md", "lg", "lg", "xl"]}
-            fontWeight="semibold"
-            color="teal.400"
-          >
-            <Trans
-              i18nKey="presentation.paragraph1"
-              components={{ strong: <strong /> }}
-            />
-          </Text>
-        </Box>
-
-        <Box
-          borderRadius="xl"
-          backdropFilter="blur(8px)"
-          p={{ base: "1rem", md: "1.5rem" }}
-          w="100%"
-        >
-          <Text
-            fontSize={["md", "lg", "lg", "xl", "2xl"]}
-            fontWeight="semibold"
-            color="teal.400"
-          >
-            {t("presentation.paragraph2")}
-          </Text>
-        </Box>
-      </Stack>
-    </Flex>
+    </Box>
   );
 };
 
