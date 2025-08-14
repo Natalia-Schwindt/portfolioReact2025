@@ -1,40 +1,141 @@
+// import { Box, Heading, Text } from "@chakra-ui/react";
+// import { useTranslation } from "react-i18next";
+// import { motion } from "framer-motion";
+// import { useEffect, useState } from "react";
+
+// // Usamos motion.custom() para envolver los componentes de Chakra UI
+// const MotionHeading = motion.custom(Heading);
+// const MotionText = motion.custom(Text);
+
+// const Home = () => {
+//   const { t } = useTranslation();
+//   const [hasMounted, setHasMounted] = useState(false);
+
+//   useEffect(() => {
+//     setHasMounted(true);
+//   }, []);
+
+//   const headingVariants = {
+//     hidden: { x: -200, opacity: 0 },
+//     visible: { x: 0, opacity: 1 },
+//   };
+
+//   const textVariants = {
+//     hidden: { y: 50, opacity: 0 },
+//     visible: { y: 0, opacity: 1 },
+//   };
+
+//   return (
+//     <Box
+//       height="100%"
+//       display="flex"
+//       flexDirection="column"
+//       alignItems="center"
+//       justifyContent="space-around"
+//     >
+//       <Box
+//         textAlign="center"
+//         borderRadius="xl"
+//         display="flex"
+//         flexDirection="column"
+//         gap={24}
+//       >
+//         <MotionHeading
+//           as="h1"
+//           fontSize={["6xl", "7xl", "8xl"]}
+//           color="title.650"
+//           mx={{ base: 4, md: 8 }}
+//           variants={headingVariants}
+//           initial="hidden"
+//           animate={hasMounted ? "visible" : "hidden"}
+//           transition={{ duration: 0.8, delay: 0.5 }}
+//         >
+//           {t("home.title")}
+//         </MotionHeading>
+//         <MotionText
+//           fontSize={["lg", "xl", "2xl", "2xl", "3xl"]}
+//           fontWeight="semibold"
+//           color="subtitle.300"
+//           mx={{ base: 4, md: 8 }}
+//           variants={textVariants}
+//           initial="hidden"
+//           animate={hasMounted ? "visible" : "hidden"}
+//           transition={{ duration: 0.8, delay: 1 }}
+//         >
+//           {t("home.subtitle")}
+//         </MotionText>
+//       </Box>
+//     </Box>
+//   );
+// };
+
+// export default Home;
 import { Box, Heading, Text } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+
+// Usamos motion.create() para crear los componentes animados
+const MotionHeading = motion.create(Heading);
+const MotionText = motion.create(Text);
 
 const Home = () => {
   const { t } = useTranslation();
+  const [hasMounted, setHasMounted] = useState(false);
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
+  const headingVariants = {
+    hidden: { x: -200, opacity: 0 },
+    visible: { x: 0, opacity: 1 },
+  };
+
+  const textVariants = {
+    hidden: { y: 50, opacity: 0 },
+    visible: { y: 0, opacity: 1 },
+  };
 
   return (
     <Box
-      flex="1"
+      height="100%"
       display="flex"
+      flexDirection="column"
       alignItems="center"
-      justifyContent="center"
-      px={4}
+      justifyContent="space-around"
     >
-      <Box textAlign="center" px={[4, 5]} py={3} borderRadius="xl">
-       <Heading
-        as="h1"
-        pt={["180px", "130px", "120px"]}
-        fontSize={["5xl", "6xl", "7xl"]}
-        bgGradient="linear(to-r, #fb0707ff, #0db781ff)"
-        bgClip="text"
-        lineHeight="short"
-        fontFamily="heading"
-        fontWeight="900"
-        textShadow="4px 4px 10px rgba(43, 42, 42, 0.34), 6px 6px 14px rgba(0, 0, 0, 0.46)"
+      <Box
+        textAlign="center"
+        borderRadius="xl"
+        display="flex"
+        flexDirection="column"
+        gap={24}
       >
-        {t("home.title")}
-      </Heading>
-        <Text
-          fontSize={["lg", "xl", "2xl", "2xl","3xl"]}
+        <MotionHeading
+          as="h1"
+          fontSize={["6xl", "7xl", "8xl"]}
+          color="title.650"
+          mx={{ base: 4, md: 8 }}
+          variants={headingVariants}
+          initial="hidden"
+          animate={hasMounted ? "visible" : "hidden"}
+          transition={{ duration: 0.8, delay: 0.5 }}
+        >
+          {t("home.title")}
+        </MotionHeading>
+        <MotionText
+          fontSize={["lg", "xl", "2xl", "2xl", "3xl"]}
           fontWeight="semibold"
-          color="teal.500"
-          m={[8, 0, 24]}
-          textShadow="1px 1px 2px rgba(0, 0, 0, 0.5)"
+          color="subtitle.300"
+          mx={{ base: 4, md: 8 }}
+          variants={textVariants}
+          initial="hidden"
+          animate={hasMounted ? "visible" : "hidden"}
+          transition={{ duration: 0.8, delay: 1 }}
         >
           {t("home.subtitle")}
-        </Text>
+        </MotionText>
       </Box>
     </Box>
   );
